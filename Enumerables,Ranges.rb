@@ -19,19 +19,19 @@ def to_initials(name) #takes in a name and outputs the initials
   end
   
   def abbreviate_sentence(sent) #takes a sentence and returns a new sentence in which the vowels are removed from all words with more than four letters
-    new_sent = []
+    new_sent_array = []
     new_word = ""
     arr = sent.split(" ")
         arr.each do |word|
            if word.length > 4
             new_word = vowel_remove(word)
-            new_sent << new_word
+            new_sent_array << new_word
            else
-             new_sent << word
+             new_sent_array << word
            end
        
        end
-     return new_sent.join(" ")
+     return new_sent_array.join(" ")
    end
    
    def vowel_remove(word)
