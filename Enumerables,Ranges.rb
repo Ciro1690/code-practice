@@ -61,4 +61,21 @@ def change_case(word)
   end
   return new_word
 end
-   
+
+def is_valid_name(str) #takes in a string and returns a boolean to show if it is a full name that is properly capitalized.
+	sep_names = str.split(" ")
+  	if !sep_names[1]
+      return false
+    end
+    sep_names.each do |word|
+      return isCorrect(word)
+    end
+end
+      
+def isCorrect(word)
+	if (word[0] == word.upcase[0]) && (word[1..-1] == word.downcase[1..-1])
+      return true
+    else
+      return false
+   end
+end
