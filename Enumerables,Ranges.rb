@@ -138,6 +138,20 @@ end
     return new_array
   end
   
+  def opposite_count(nums) #takes in an array and returns the number of pairs of elements that sum to 0.
+    count = 0
+    nums.each_with_index do |ele1,ind1|
+      nums.each_with_index do |ele2,ind2|
+        if ind2 > ind1
+         if ele1 + ele2 == 0
+          count +=1
+         end
+        end
+      end
+    end
+    return count
+  
+  end
 
 
   
