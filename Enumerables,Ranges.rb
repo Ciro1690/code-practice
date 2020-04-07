@@ -62,20 +62,50 @@ def change_case(word)
   return new_word
 end
 
-def is_valid_name(str) #takes in a string and returns a boolean to show if it is a full name that is properly capitalized.
-	sep_names = str.split(" ")
-  	if !sep_names[1]
-      return false
-    end
-    sep_names.each do |word|
-      return isCorrect(word)
-    end
-end
-      
-def isCorrect(word)
-	if (word[0] == word.upcase[0]) && (word[1..-1] == word.downcase[1..-1])
+
+  def is_valid_name(str) #takes in a string and returns a boolean to show if it is a full name that is properly capitalized.
+    sep_names = str.split(" ")
+      if !sep_names[1]
+        return false
+      end
+      sep_names.each do |word|
+        if isCorrect(word) == false
+          return false
+        end
+      end
       return true
-    else
-      return false
+  end
+        
+  def isCorrect(word)
+    if (word[0] == word.upcase[0]) && (word[1..-1] == word.downcase[1..-1])
+        return true
+      else
+        return false
+     end
+  end
+
+  def is_valid_email(str) #checks if a string is a valid email address
+                          #has all lowercase letters left of @, has one @, and has one "." to the right of the @
+    alpha = "abcdefghijklmnopqrstuvwxyz"
+    seperate = str.split("@")
+     if seperate.length != 2
+       return false
+     end
+       
+     seperate[0].each_char do |char|
+       if !alpha.include?(char)
+        return false
+       end
+     end
+     
+       if seperate[1].split(".").length == 2
+         return true
+       else
+         return false
+       end
+     
    end
-end
+   
+
+
+  
