@@ -117,14 +117,27 @@ end
     return new_sent 
    end
    
-   def rotate_array(arr, num) #takes in an array and number, rotates the order the given number of times
+  def rotate_array(arr, num) #takes in an array and number, rotates the order the given number of times
     new_array = []
     last_name = arr.pop(num)
     new_array << arr
     new_array.unshift(last_name)
     new_string = new_array.join(" ")
     puts new_string
-   end
+  end
+
+  def combinations(arr) #takes in an array and outputs a 2D array of all possible combinations of 2 elements in the array
+    new_array = []
+    arr.each do |ele1|
+        arr.each do |ele2|
+          if ele2 > ele1
+            new_array << ele1.to_s + ", " + ele2.to_s
+          end
+        end
+      end
+    return new_array
+  end
+  
 
 
   
