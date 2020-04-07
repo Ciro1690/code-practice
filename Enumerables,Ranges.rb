@@ -105,6 +105,18 @@ end
        end
      
    end
+
+   def reverse_words(sent) #takes in a string and outputs the string with each word reversed, but still in the same order
+    new_word = []
+    parts = sent.split(" ")
+    
+    parts.each do |letter| 
+      new_word << letter.reverse
+    end
+    new_sent = new_word.join(" ")
+    return new_sent 
+   end
+   
    
 
 
