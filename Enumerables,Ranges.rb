@@ -153,5 +153,13 @@ end
   
   end
 
-
+  def two_d_sum(arr) #takes in a 2D array and returns the sum of all the numbers
+    total = 0	
+    arr.each do |num1|
+       num1.each do |num2|
+         total += num2
+       end
+    end
+    return total
+  end
   
