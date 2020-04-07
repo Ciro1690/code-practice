@@ -172,3 +172,15 @@ end
     return new_array
   end
   
+  def array_translate(array) #takes in an array whose elements alternate between strings and numbers
+    new_String = ""          #return a string where each word is repeated the amount of the number following it
+    i = 0
+     while i < array.length
+      array[i+1].times do
+        new_String += array[i]
+      end
+     i+=2
+     end
+    return new_String
+   end
+   
