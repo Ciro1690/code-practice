@@ -117,7 +117,14 @@ end
     return new_sent 
    end
    
-   
+   def rotate_array(arr, num) #takes in an array and number, rotates the order the given number of times
+    new_array = []
+    last_name = arr.pop(num)
+    new_array << arr
+    new_array.unshift(last_name)
+    new_string = new_array.join(" ")
+    puts new_string
+   end
 
 
   
