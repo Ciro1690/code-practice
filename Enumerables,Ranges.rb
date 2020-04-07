@@ -162,4 +162,13 @@ end
     end
     return total
   end
+
+  def two_d_translate(arr) #takes in a 2D array and returns an array, of the 2D array the [0] value is printed the [1] value number of times.
+    arr.each do |sub_Array|
+      sub_Array[1].times do
+          new_array << sub_Array[0]
+      end  
+    end
+    return new_array
+  end
   
