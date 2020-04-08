@@ -71,4 +71,17 @@ def hand_score(hand) #takes in a string of face cards and returns the sum of the
     end
     return score
 end
+
+def frequent_letters(string) #takes in a string and returns an array with any letter that is in the string more than twice.
+    array = []
+    count = Hash.new(0)
+     string.each_char {|char| count[char]+=1}
+         count.each do |k,v|
+         if v > 2
+         array << k
+       end 
+     end
+    return array
+   end
+     
   
