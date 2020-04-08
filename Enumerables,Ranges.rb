@@ -184,3 +184,15 @@ end
     return new_String
    end
    
+   def pig_latin_word(word) #takes in a string and returns the string in piglatin.
+    vowels = "aeious"
+    if vowels.include?(word[0])
+      return word + "yay"
+    end
+    
+    word.each_char.with_index do |char,i|
+      if vowels.include?(char)
+        return word[i+1..-1] + word[0..i] + "ay"
+      end
+    end
+   end
