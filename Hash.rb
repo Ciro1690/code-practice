@@ -42,5 +42,33 @@ def retrieve_values(hash1, hash2, key) #takes in two hashes and a key, returns t
     end  
       return {"a" => count_a, "e" => count_e} 
   end
-  
+
+def element_count(arr) #takes in an array and returns a hash that counts each element in the array.
+    count = Hash.new(0)
+	arr.each {|ele| count[ele]+=1}
+  return count
+end
+
+def select_upcase_keys(hash) #takes in a hash and returns a hash with only the pairs associated with all caps keys.
+    new_hash = {}
+        hash.each do |key,value|
+          if key == key.upcase
+            new_hash[key] = value
+          end
+      end
+    return new_hash
+end
+
+def hand_score(hand) #takes in a string of face cards and returns the sum of the cards' value.
+	hash = {"A" => 4, "K" => 3, "Q" => 2, "J" =>1}
+    score = 0
+    hash.each do |k,v|
+      hand.each_char do |letter|
+        if letter == k || letter.upcase == k
+          score += v
+        end
+      end
+    end
+    return score
+end
   
